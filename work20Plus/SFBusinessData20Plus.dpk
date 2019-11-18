@@ -1,0 +1,77 @@
+//
+//   Title:         SFBusinessData20Plus
+//
+//   Description:   runtime package for SFBusinessData (delphi 10.3 and higher)
+//
+//   Created by:    Frank Huber
+//
+//   Copyright:     Frank Huber - The SoftwareFactory -
+//                  Alberweilerstr. 1
+//                  D-88433 Schemmerhofen
+//
+//                  http://www.thesoftwarefactory.de
+//
+package SFBusinessData20Plus;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+{$I SFBusinessDataConnectivity.INC}
+
+requires
+  rtl,
+  xmlrtl,
+  dbrtl,
+  {$IFDEF MSWINDOWS}
+    adortl,
+  {$ENDIF MSWINDOWS}
+  {$IFDEF HASFIREDAC}
+    FireDACCommonDriver,
+    FireDACCommon,
+    FireDAC,
+  {$ENDIF HASFIREDAC}
+  {$IFDEF HASIBX}
+    ibxpress,
+  {$ENDIF HASIBX}
+  dsnap,
+  DbxCommonDriver,
+  dbexpress;
+
+contains
+  SFBusinessDataConnector in '..\src\SFBusinessDataConnector.pas',
+  SFBusinessDataCustom in '..\src\SFBusinessDataCustom.pas',
+  SFStatements in '..\src\SFStatements.pas',
+  SFBusinessDataConst in '..\common\SFBusinessDataConst.pas',
+  SFBusinessDataCommon in '..\common\SFBusinessDataCommon.pas',
+  SFStatementConst in '..\common\SFStatementConst.pas',
+  SFStatementType in '..\common\SFStatementType.pas',
+  SFBusinessDataDemoHelp in '..\common\SFBusinessDataDemoHelp.pas',
+  SFBusinessData in '..\src\SFBusinessData.pas',
+  SFStatementsXML in '..\src\SFStatementsXML.pas';
+
+end.

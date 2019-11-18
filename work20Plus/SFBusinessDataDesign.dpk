@@ -1,0 +1,63 @@
+//
+//   Title:         SFBusinessDataDesign
+//
+//   Description:   designtime package for SFBusinessData (delphi 10.3 and higher)
+//
+//   Created by:    Frank Huber
+//
+//   Copyright:     Frank Huber - The SoftwareFactory -
+//                  Alberweilerstr. 1
+//                  D-88433 Schemmerhofen
+//
+//                  http://www.thesoftwarefactory.de
+//
+package SFBusinessDataDesign;
+
+{$R *.res}
+{$R *.dres}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESIGNONLY}
+{$IMPLICITBUILD ON}
+
+//============================= WARNING ======================================//
+// do not compile the project with Win64 or OSX
+// this platforms must be added only for for the IDE (designer)
+// otherwise the IDE doesn't know the (runtime-)package is also for Win64
+// and OSX
+//=========================== END WARNING ====================================//
+
+requires
+  rtl,
+  designide,
+  vcldb,
+  SFBusinessData20Plus;
+
+contains
+  SFBusinessDataReg in '..\designer\SFBusinessDataReg.pas',
+  SFStatementReg in '..\designer\SFStatementReg.pas',
+  UFrmSFStatementDefine in '..\designer\UFrmSFStatementDefine.pas';
+
+end.
