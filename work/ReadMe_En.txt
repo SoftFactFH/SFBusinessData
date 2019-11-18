@@ -2,7 +2,7 @@
 						README SFBusinessData
 ====================================================================================================================
 
-SFBusinessData are components of Embarcadero Delphi for reusable, database independent programming
+SFBusinessData are components for Embarcadero Delphi for reusable, database independent programming
 of business or data logic.
 
 1. Information and examples
