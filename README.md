@@ -16,7 +16,7 @@ To create your own business classes, you can use the template \template\UBusines
 
 License and support of development
 ----------------------------------
-SFBusinessData is free of charge and uses the terms of the MIT license - see License_En.txt
+SFBusinessData is free of charge and uses the terms of the MIT license - see License.
 
 If you like SFBusinessData you can financially support the development of SFBusinessData.
 Therefore please use the following PayPal-Link: 
